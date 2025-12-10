@@ -23,7 +23,7 @@ public class Stream_02_Test {
 
 		List<Order> orders = new Data().getOrders();
 
-		// TODO Trouver la liste des clients associés aux commandes
+		// Trouver la liste des clients associés aux commandes
 		List<Customer> result = orders.stream().map(order -> order.getCustomer()).toList();
 
 		assertThat(result, hasSize(8));
@@ -34,7 +34,7 @@ public class Stream_02_Test {
 
 		List<Order> orders = new Data().getOrders();
 
-		// TODO Compter le nombre de clients associés aux commandes
+		// Compter le nombre de clients associés aux commandes
 		long result = orders.stream().map(order -> order.getCustomer()).count();
 
 		assertThat(result, is(8L));
@@ -45,7 +45,7 @@ public class Stream_02_Test {
 
 		List<Order> orders = new Data().getOrders();
 
-		// TODO Trouver la liste des différents clients associés aux commandes (sans doublon)
+		// Trouver la liste des différents clients associés aux commandes (sans doublon)
 		List<Customer> result = orders.stream().map(order -> order.getCustomer()).distinct().toList();
 
 		assertThat(result, hasSize(2));
@@ -56,7 +56,7 @@ public class Stream_02_Test {
 
 		List<Order> orders = new Data().getOrders();
 
-		// TODO Compter le nombre des différents clients associés aux commandes
+		// Compter le nombre des différents clients associés aux commandes
 		long result = orders.stream().map(order -> order.getCustomer()).distinct().count();
 
 		assertThat(result, is(2L));
@@ -68,7 +68,7 @@ public class Stream_02_Test {
 		List<Order> orders = new Data().getOrders();
 
 		/*
-		 * TODO Calculer le chiffre d'affaires total de la pizzeria (somme des prix des
+		 * Calculer le chiffre d'affaires total de la pizzeria (somme des prix des
 		 * commandes)
 		 */
 		double result = orders.stream().mapToDouble(order->order.getPrice()).sum();
@@ -82,7 +82,7 @@ public class Stream_02_Test {
 		List<Order> orders = new Data().getOrders();
 
 		/*
-		 * TODO Calculer le prix moyen des commandes de la pizzeria
+		 * Calculer le prix moyen des commandes de la pizzeria
 		 */
 		OptionalDouble result = orders.stream().mapToDouble(order->order.getPrice()).average();
 
